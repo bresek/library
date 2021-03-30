@@ -11,21 +11,26 @@
 </head>
 
 <body>
+  <!-- popup form -->
+  <div class="overlay">
+    <form class="bookForm" action="" method="">
+      <input type="text" id="BookTitle" placeholder="Title">
+      <input type="text" id="author" placeholder="Author">
+      <input type="number" id="pages" placeholder="pages">
+      <div>
+        <label for="readStatus">Have you read it?</label>
+        <input type="checkbox" id="readStatus" value="">
+      </div>
+
+      <button type="button" name="button" id="submit">Add to library</button>
+    </form>
+  </div>
+
   <h1>Library</h1>
   <!-- add book button -->
   <button type="button" name="button" id="addBook">Add Book</button>
-  <!-- popup form -->
-  <form class="bookForm" action="index.html" method="post">
-    <label for="Title">Title</label>
-    <input type="text" name="BookTitle" value="">
-    <label for="author">Author</label>
-    <input type="text" name="author" value="">
-    <label for="pages">Pages</label>
-    <input type="number" name="pages" value="">
-    <label for="readStatus">Have you read it?</label>
-    <input type="checkbox" name="readStatus" value="">
 
-  </form>
+
 
   <!-- library container -->
   <div class="container">

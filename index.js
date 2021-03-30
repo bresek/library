@@ -6,10 +6,25 @@ let myLibrary = [];
 
 
 //button to add book
-// const bookButton = document.querySelector("#addBook")
-// bookButton.addEventListner("click", function(){
-//
-// })
+
+const container = document.querySelector('.container')
+const bookButton = document.querySelector("#addBook")
+const form = document.querySelector("form")
+const submitButton = document.querySelector('#submit')
+const overlay = document.querySelector(".overlay")
+
+//displays input form
+bookButton.addEventListener("click", function(){
+  overlay.style.display = "flex"
+
+})
+
+submitButton.addEventListener('click', function(){
+  console.log("submited!")
+  const form = document.querySelector('form')
+  console.log(form.innerHTML)
+})
+
 
 
 //book constructor function
@@ -45,7 +60,6 @@ const harryPotter2 = new Book("Harry Potter 2", "J.K Rowling", '351 pages', fals
 addBookToLibrary(harryPotter2);
 
 
-const container = document.querySelector('.container')
 // Display my library
 for (let i = 0; i < myLibrary.length; i++){
   const div = document.createElement('div')
