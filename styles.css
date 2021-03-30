@@ -1,0 +1,37 @@
+body{
+  font-family: 'Quattrocento', serif;
+}
+h1{
+  text-align: center;
+
+}
+li{
+  list-style: none;
+  color: white;
+}
+form{
+  /* top:0; left: 0; bottom: 0; right: 0; */
+
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: #966c3b;
+  color: #ffe6ca;
+  padding: 2rem;
+}
+
+.container{
+  margin:auto;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  background-color: #ffe6ca;
+  grid-gap: 1rem;
+  width: 60vw;
+  height: 70vh;
+  align-items:baseline;
+
+}
+
+.book{
+  background-color: #966c3b;
+}
