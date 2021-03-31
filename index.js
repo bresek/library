@@ -65,6 +65,8 @@ const harryPotter = new Book("Harry Potter", "J.K Rowling", '299 pages', true);
 addBookToLibrary(harryPotter);
 const harryPotter2 = new Book("Harry Potter 2", "J.K Rowling", '351 pages', false)
 addBookToLibrary(harryPotter2);
+const harryPotter3 = new Book("Harry Potter 3", "J.K Rowling", '483 pages', false)
+addBookToLibrary(harryPotter3);
 
 displayBooks()
 // Display my library

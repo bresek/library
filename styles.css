@@ -1,8 +1,14 @@
 body{
   font-family: 'Quattrocento', serif;
+  font-size: 1.5rem;
+}
+#landingStructure{
+  display: grid;
+  grid-template-columns: repeat(1fr,3);
 }
 h1{
   text-align: center;
+  grid-column: 1/4;
 
 }
 li{
@@ -19,11 +25,19 @@ form{
   color: #ffe6ca;
   padding: 2rem;
   opacity: 1;
-  grid-gap: 1rem;
-
-
+  grid-gap: .5rem;
 
 }
+#addBook{
+  text-align: center;
+  grid-column:2/3;
+  font-size: 1.5rem;
+  margin: 1rem 5rem;
+  border-radius: 1rem;
+  border: 1px solid black;
+  
+}
+
 .overlay{
   position:absolute;
   display: none;
@@ -35,13 +49,16 @@ form{
 
 .container{
   margin:auto;
+  padding: 0;
   display: grid;
   grid-template-columns: repeat(3,1fr);
   /* background-color: #ffe6ca; */
   grid-gap: 1rem;
-  width: 60vw;
+  width: 80vw;
   height: 70vh;
-  align-items:baseline;
+
+  align-items:flex-start;
+  grid-column: 1/4;
 
 
 }
