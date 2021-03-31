@@ -12,17 +12,24 @@ const bookButton = document.querySelector("#addBook")
 const form = document.querySelector("form")
 const submitButton = document.querySelector('#submit')
 const overlay = document.querySelector(".overlay")
+const bookForm = document.querySelectorAll('input')
 
 //displays input form
 bookButton.addEventListener("click", function(){
   overlay.style.display = "flex"
-
 })
 
+//submit button
 submitButton.addEventListener('click', function(){
   console.log("submited!")
-  const form = document.querySelector('form')
-  console.log(form.innerHTML)
+  console.log(bookForm)
+  const test= new Book(bookForm[0].value, bookForm[1].value,bookForm[2].value,bookForm[3].value)
+  console.log(test)
+  addBookToLibrary(test)
+  displayBooks()
+  overlay.style.display = "none"
+
+
 })
 
 
@@ -59,11 +66,15 @@ addBookToLibrary(harryPotter);
 const harryPotter2 = new Book("Harry Potter 2", "J.K Rowling", '351 pages', false)
 addBookToLibrary(harryPotter2);
 
-
+displayBooks()
 // Display my library
-for (let i = 0; i < myLibrary.length; i++){
-  const div = document.createElement('div')
-  div.classList.add('book')
-  div.innerHTML = "<ul>" + "<li>" + myLibrary[i].title + "</li>" + "<li>" + myLibrary[i].author + "</li>" +"<li>" + myLibrary[i].pages + "</li>" + "<li>" + myLibrary[i].read + "</li>" +  "</ul>"
-  container.appendChild(div)
+function displayBooks() {
+  container.innerHTML = ''
+  for (let i = 0; i < myLibrary.length; i++){
+    const div = document.createElement('div')
+    div.classList.add('book')
+    div.innerHTML = "<ul>" + "<li>" + myLibrary[i].title + "</li>" + "<li>" + myLibrary[i].author + "</li>" +"<li>" + myLibrary[i].pages + "</li>" + "<li>" + myLibrary[i].read + "</li>" +  "</ul>"
+    container.appendChild(div)
+  }
+
 }
