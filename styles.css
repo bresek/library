@@ -18,7 +18,7 @@ li{
 form{
   /* top:0; left: 0; bottom: 0; right: 0; */
   position:fixed;
-  height: 90vh;
+  height: 80vh;
   display:grid;
   grid-template-columns: 1fr;
   background-color: #966c3b;
@@ -26,7 +26,15 @@ form{
   padding: 2rem;
   opacity: 1;
   grid-gap: .5rem;
+  border-radius: 1rem;
+  margin: 1rem 0;
 
+}
+input, #submit{
+  border-radius: 1rem;
+  font-size: 2rem;
+  border: 1px solid black;
+  font-family: 'Quattrocento', serif;
 }
 #addBook{
   text-align: center;
@@ -35,7 +43,7 @@ form{
   margin: 1rem 5rem;
   border-radius: 1rem;
   border: 1px solid black;
-  
+
 }
 
 .overlay{
@@ -54,9 +62,8 @@ form{
   grid-template-columns: repeat(3,1fr);
   /* background-color: #ffe6ca; */
   grid-gap: 1rem;
+  grid-template-rows: auto;
   width: 80vw;
-  height: 70vh;
-
   align-items:flex-start;
   grid-column: 1/4;
 
@@ -67,6 +74,7 @@ form{
 }
 
 .book{
+  margin: 0;
   background-color: #966c3b;
   border-radius: 1rem;
   border: 1px solid #cdc733;

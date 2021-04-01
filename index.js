@@ -14,6 +14,7 @@ const submitButton = document.querySelector('#submit')
 const overlay = document.querySelector(".overlay")
 const bookForm = document.querySelectorAll('input')
 
+
 //displays input form
 bookButton.addEventListener("click", function(){
   overlay.style.display = "flex"
@@ -31,6 +32,7 @@ submitButton.addEventListener('click', function(){
 
 
 })
+
 
 
 
@@ -61,11 +63,11 @@ function addBookToLibrary(book){
 
 
 //temporary book for desiign
-const harryPotter = new Book("Harry Potter", "J.K Rowling", '299 pages', true);
+const harryPotter = new Book("Harry Potter", "J.K Rowling", '299', true);
 addBookToLibrary(harryPotter);
-const harryPotter2 = new Book("Harry Potter 2", "J.K Rowling", '351 pages', false)
+const harryPotter2 = new Book("Harry Potter 2", "J.K Rowling", '351', false)
 addBookToLibrary(harryPotter2);
-const harryPotter3 = new Book("Harry Potter 3", "J.K Rowling", '483 pages', false)
+const harryPotter3 = new Book("Harry Potter 3", "J.K Rowling", '483', false)
 addBookToLibrary(harryPotter3);
 
 displayBooks()
@@ -75,8 +77,25 @@ function displayBooks() {
   for (let i = 0; i < myLibrary.length; i++){
     const div = document.createElement('div')
     div.classList.add('book')
-    div.innerHTML = "<ul>" + "<li>" + myLibrary[i].title + "</li>" + "<li>" + myLibrary[i].author + "</li>" +"<li>" + myLibrary[i].pages + "</li>" + "<li>" + myLibrary[i].read + "</li>" +  "</ul>"
+    div.setAttribute("data-index", i)
+    div.innerHTML = "<ul>" +  "<li>" + myLibrary[i].title + "</li>" + "<li>" + myLibrary[i].author + "</li>" +"<li>" + myLibrary[i].pages +" pages"+ "</li>" + "<li>" + myLibrary[i].read + "</li>" +  "</ul>" + '<button type="button" id="remove">Remove</button>'
     container.appendChild(div)
   }
 
 }
+
+
+let removeBtns = document.querySelectorAll('#remove')
+
+// for some reason only works once. I think i might need to put the querySelectorAll inside a function also?
+for (let i = 0; i < removeBtns.length; i++){
+  removeBtns[i].addEventListener('click', function(event){
+    console.log('remove clicked')
+    const removeBtn = event.path[1]
+    console.log(removeBtn.getAttribute("data-index"))
+    const r = removeBtn.getAttribute("data-index")
+    myLibrary.splice(r,1)
+    displayBooks()
+    let removeBtns = document.querySelectorAll('#remove')
+  })
+  }
