@@ -84,18 +84,16 @@ function displayBooks() {
 
 }
 
+// Remove button 
 
-let removeBtns = document.querySelectorAll('#remove')
+  container.addEventListener('click', function(event){
+    console.log(event.target.id)
+    if (event.target.id === "remove"){
+       console.log('remove clicked')
+          console.log(event.target.parentElement.getAttribute("data-index"))
+          const removedBookIndex = event.target.parentElement.getAttribute("data-index")
+          myLibrary.splice(removedBookIndex,1)
+          displayBooks()
 
-// for some reason only works once. I think i might need to put the querySelectorAll inside a function also?
-for (let i = 0; i < removeBtns.length; i++){
-  removeBtns[i].addEventListener('click', function(event){
-    console.log('remove clicked')
-    const removeBtn = event.path[1]
-    console.log(removeBtn.getAttribute("data-index"))
-    const r = removeBtn.getAttribute("data-index")
-    myLibrary.splice(r,1)
-    displayBooks()
-    let removeBtns = document.querySelectorAll('#remove')
+    }
   })
-  }
